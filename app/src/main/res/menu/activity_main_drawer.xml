@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fillViewport="true" >-->
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/menu_home" />
+            <item
+                android:id="@+id/nav_reuniones"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_reuniones" />
+            <item
+                android:id="@+id/nav_salidas"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_salidas" />
+            <item
+                android:id="@+id/nav_sonido"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_sonido" />
+            <item
+                android:id="@+id/nav_grupos"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_grupos" />
+            <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="@string/menu_slideshow" />
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_tools" />
+        </group>
+
+        <item android:title="@string/interactivo"
+            android:icon="@drawable/ic_menu_share">
+            <menu>
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="@string/menu_share" />
+                <item
+                    android:id="@+id/nav_send"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/menu_send" />
+            </menu>
+        </item>
+<!--    </ScrollView>-->
+</menu>
