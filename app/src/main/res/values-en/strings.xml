@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MisericApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Plaza de la Misericordia 2020</string>
+    <string name="nav_header_subtitle">ghc.8786@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Account Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Name and Last Name</string>
+    <string name="hint_user">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_button_createaccount">CREATE ACCOUNT</string>
+    <string name="toolbar_title_createaccount">Create Account</string>
+    <string name="hint_username">User</string>
+    <string name="text_button_login">ENTER NOW</string>
+    <string name="dont_have_account">Do not have account?</string>
+    <string name="create_here">, create here</string>
+    <string name="menu_reuniones">Programa de las Reuniones</string>
+    <string name="menu_salidas">Salidas de Predicación</string>
+    <string name="menu_sonido">Asignaciones Sonido y Acomodadores</string>
+    <string name="menu_grupos">Grupos de Predicación</string>
+    <string name="interactivo">Interactivo [próximamente]</string>
+    <string name="homeiniciodesesion">INICIO DE USUARIO</string>
+</resources>
