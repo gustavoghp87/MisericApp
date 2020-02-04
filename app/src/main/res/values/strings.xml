@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MisericApp</string>
+    <string name="navigation_drawer_open">Abrir dibujador de navegación</string>
+    <string name="navigation_drawer_close">Cerrar dibujador de navegación</string>
+    <string name="nav_header_title">Plaza de la Misericordia 2020</string>
+    <string name="nav_header_subtitle">ghc.8786@gmail.com</string>
+    <string name="nav_header_desc">Encabezado de Navegación</string>
+    <string name="action_settings">Opciones de la Cuenta</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_reuniones">Programas de las Reuniones</string>
+    <string name="menu_sonido">Asignaciones Mecánicas</string>
+    <string name="menu_grupos">Grupos de predicación</string>
+    <string name="menu_share">Compartir una Foto</string>
+    <string name="menu_send">Enviar un Mensaje</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Nombre y Apellido</string>
+    <string name="hint_user">Nombre de Usuario</string>
+    <string name="hint_password">Contraseña...</string>
+    <string name="hint_password_create">Contraseña (min. 6 caracteres)</string>
+    <string name="hint_confirm_password">Confirmar Contraseña</string>
+    <string name="text_button_createaccount">CREAR CUENTA</string>
+    <string name="toolbar_title_createaccount">Crear una cuenta</string>
+    <string name="hint_username">Email registrado...</string>
+    <string name="text_button_login">INGRESAR</string>
+    <string name="dont_have_account">¿No tienes cuenta?</string>
+    <string name="create_here">, crea una aquí</string>
+    <string name="menu_salidas">Salidas de Predicación</string>
+    <string name="interactivo">Interactivo [próximamente]</string>
+    <string name="homeiniciodesesion">INICIO DE USUARIO</string>
+    <string name="version">MisericApp v.2.0</string>
+    <string name="advertencia">A tener en cuenta: La contraseña elegida será visible para los administradores. No usar contraseña de otras redes.</string>
+    <string name="button_logout">CERRAR SESIÓN</string>
+    <string name="opciones_cuenta">Opciones de cuenta</string>
+    <string name="switch_dark">Modo Oscuro</string>
+</resources>

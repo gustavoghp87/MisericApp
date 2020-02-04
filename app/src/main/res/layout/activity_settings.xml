@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/actionbar_toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/opciones_cuenta"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        >
+        <Switch
+            android:id="@+id/switch_dark"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_dark"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        >
+        <Switch
+            android:id="@+id/switch_english"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="English Version"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/button_logout"
+        android:theme="@style/RaisedButtonDark"
+        android:layout_marginTop="20dp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MisericApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Plaza de la Misericordia 2020</string>
+    <string name="nav_header_subtitle">ghc.8786@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Account Settings</string>
+    <string name="version">MisericApp v.2.0</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_reuniones">Meetings programs</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Name and Last Name</string>
+    <string name="hint_user">Username</string>
+    <string name="hint_password">Password...</string>
+    <string name="hint_password_create">Password (min. 6 characters)</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_button_createaccount">CREATE ACCOUNT</string>
+    <string name="toolbar_title_createaccount">Create Account</string>
+    <string name="hint_username">Registered Email...</string>
+    <string name="text_button_login">ENTER NOW</string>
+    <string name="dont_have_account">Do not have account?</string>
+    <string name="create_here">, create here</string>
+    <string name="menu_salidas">Preaching meeting point</string>
+    <string name="menu_sonido">Mechanics Assignments</string>
+    <string name="menu_grupos">Preaching Groups</string>
+    <string name="interactivo">Interactive [coming soon]</string>
+    <string name="homeiniciodesesion">LOGING</string>
+    <string name="advertencia">Take care: Web Application Passwords are always visible for administrators. Do not use passwords of another apps here. </string>
+    <string name="button_logout">LOG OUT</string>
+    <string name="opciones_cuenta">Account Settings</string>
+    <string name="switch_dark">Dark Mode</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home"
+    >
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.paquete.misericapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_reuniones"
+        android:name="com.paquete.misericapp.ui.reuniones.ReunionesFragment"
+        android:label="@string/menu_salidas"
+        tools:layout="@layout/fragment_reuniones" />
+
+    <fragment
+        android:id="@+id/nav_salidas"
+        android:name="com.paquete.misericapp.ui.salidas.SalidasFragment"
+        android:label="@string/menu_salidas"
+        tools:layout="@layout/fragment_salidas" />
+
+    <fragment
+        android:id="@+id/nav_sonido"
+        android:name="com.paquete.misericapp.ui.sonido.SonidoFragment"
+        android:label="@string/menu_sonido"
+        tools:layout="@layout/fragment_sonido" />
+
+    <fragment
+        android:id="@+id/nav_grupos"
+        android:name="com.paquete.misericapp.ui.grupos.GruposFragment"
+        android:label="@string/menu_grupos"
+        tools:layout="@layout/fragment_grupos" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.paquete.misericapp.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.paquete.misericapp.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+</navigation>

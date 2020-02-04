@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "267169883061",
+    "firebase_url": "https://misericapp.firebaseio.com",
+    "project_id": "misericapp",
+    "storage_bucket": "misericapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267169883061:android:a939f6f9247a3644026ffc",
+        "android_client_info": {
+          "package_name": "com.paquete.misericapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267169883061-6a518kbb7bhopa1urb3dnlbt47t7pehq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paquete.misericapp",
+            "certificate_hash": "3aa73e8a1cd46d780df7de458d386475279ca18c"
+          }
+        },
+        {
+          "client_id": "267169883061-9ufi9c4pud0v5d8fjghne46u6mc649pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrZozTACunvFEHnO2wTk1ysbBRFQsPhw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267169883061-9ufi9c4pud0v5d8fjghne46u6mc649pg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
