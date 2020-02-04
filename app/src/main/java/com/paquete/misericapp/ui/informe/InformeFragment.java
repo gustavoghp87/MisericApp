@@ -1,4 +1,4 @@
-package com.paquete.misericapp.ui.salidas;
+package com.paquete.misericapp.ui.informe;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +12,16 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.lifecycle.ViewModelProvider;
 import com.paquete.misericapp.R;
 
-public class SalidasFragment extends Fragment
+public class InformeFragment extends Fragment
 {
-    private SalidasViewModel salidasViewModel;
+    private InformeViewModel informeViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState)
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        salidasViewModel = new ViewModelProvider(this).get(SalidasViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_salidas, container, false);
-        final TextView textView = root.findViewById(R.id.text_salidas);
-        salidasViewModel.getText().observe(this, new Observer<String>()
+        informeViewModel = new ViewModelProvider(this).get(InformeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_informe, container, false);
+        final TextView textView = root.findViewById(R.id.text_informe);
+        informeViewModel.getText().observe(this, new Observer<String>()
         {
             @Override
             public void onChanged(@Nullable String s)

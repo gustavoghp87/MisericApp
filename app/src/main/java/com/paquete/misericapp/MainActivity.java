@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity
 {
     private AppBarConfiguration mAppBarConfiguration;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Nada por aquí por ahora...", Snackbar.LENGTH_LONG)
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_reuniones, R.id.nav_salidas,
-                R.id.nav_sonido, R.id.nav_grupos,R.id.nav_share, R.id.nav_send)
+                R.id.nav_sonido, R.id.nav_grupos,R.id.nav_share, R.id.nav_send, R.id.nav_informe)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

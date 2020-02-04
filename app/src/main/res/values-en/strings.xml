@@ -33,4 +33,6 @@
     <string name="button_logout">LOG OUT</string>
     <string name="opciones_cuenta">Account Settings</string>
     <string name="switch_dark">Dark Mode</string>
+    <string name="menu_informe">Send Preaching Report</string>
+    <string name="provisorio">PROVISIONAL ACCESS</string>
 </resources>

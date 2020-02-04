@@ -33,4 +33,6 @@
     <string name="button_logout">CERRAR SESIÓN</string>
     <string name="opciones_cuenta">Opciones de cuenta</string>
     <string name="switch_dark">Modo Oscuro</string>
+    <string name="menu_informe">Enviar el Informe del mes</string>
+    <string name="provisorio">ACCESO PROVISORIO</string>
 </resources>
