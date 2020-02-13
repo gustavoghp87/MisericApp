@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> master/master
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
+<<<<<<< HEAD
         app:showAsAction="never"
         android:onClick="settings"/>
+=======
+        app:showAsAction="never" />
+>>>>>>> master/master
 </menu>

@@ -6,7 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+<<<<<<< HEAD
         <item name="background">@android:color/white</item>
+=======
+>>>>>>> master/master
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -51,6 +54,7 @@
         <item name="colorControlActivated">@color/editTextColorGray</item>
     </style>
 
+<<<<<<< HEAD
 
     //DARK MODE
     <style
@@ -64,4 +68,6 @@
 
 
 
+=======
+>>>>>>> master/master
 </resources>

@@ -1,4 +1,5 @@
 package com.paquete.misericapp;
+<<<<<<< HEAD
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -124,11 +125,28 @@ public class CreateAccountActivity extends AppCompatActivity
                 }
             }
         });
+=======
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import android.os.Bundle;
+
+public class CreateAccountActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_create_account);
+        showToolbar(getResources().getString(R.string.toolbar_title_createaccount), true);
+>>>>>>> master/master
     }
 
     public void showToolbar(String title, boolean upButton)
     {
+<<<<<<< HEAD
         Toolbar toolbar = findViewById(R.id.toolbar2);
+=======
+        Toolbar toolbar = findViewById(R.id.toolbar);
+>>>>>>> master/master
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);

@@ -2,6 +2,7 @@ package com.paquete.misericapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -22,11 +23,18 @@ public class LoginActivity extends AppCompatActivity
 
     private FirebaseAuth mAuth;
 
+=======
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LoginActivity extends AppCompatActivity
+{
+>>>>>>> master/master
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+<<<<<<< HEAD
 
         mEditTextEmail      = findViewById(R.id.username);
         mEditTextPassword   = findViewById(R.id.password);
@@ -72,6 +80,8 @@ public class LoginActivity extends AppCompatActivity
                 }
             }
         });
+=======
+>>>>>>> master/master
     }
 
     public void goCreateAccount(View view)
@@ -85,6 +95,7 @@ public class LoginActivity extends AppCompatActivity
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+<<<<<<< HEAD
 
     public void goEnterProv(View view)
     {
@@ -92,4 +103,6 @@ public class LoginActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+=======
+>>>>>>> master/master
 }

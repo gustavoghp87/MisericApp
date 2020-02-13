@@ -5,10 +5,19 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+<<<<<<< HEAD
     <dimen name="edittext_margin_createaccount">23dp</dimen>
     <dimen name="padding_horizontal_login">20dp</dimen>
     <dimen name="textsize_donthaveaccount">19sp</dimen>
     <dimen name="edittext_textsize_login">22sp</dimen>
     <dimen name="textopening">40sp</dimen>
     <dimen name="marginbuttoningreso">30dp</dimen>
+=======
+    <dimen name="edittext_margin_createaccount">15dp</dimen>
+    <dimen name="padding_horizontal_login">20dp</dimen>
+    <dimen name="textsize_donthaveaccount">16sp</dimen>
+    <dimen name="edittext_textsize_login">22sp</dimen>
+    <dimen name="textopening">40sp</dimen>
+    <dimen name="marginbuttoningreso">25dp</dimen>
+>>>>>>> master/master
 </resources>

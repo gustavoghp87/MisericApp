@@ -8,9 +8,17 @@
     android:theme="@style/AppTheme.AppBarOverlay">
 
     <androidx.appcompat.widget.Toolbar
+<<<<<<< HEAD
         android:id="@+id/toolbar2"
+=======
+        android:id="@+id/toolbar"
+>>>>>>> master/master
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> master/master
 </com.google.android.material.appbar.AppBarLayout>

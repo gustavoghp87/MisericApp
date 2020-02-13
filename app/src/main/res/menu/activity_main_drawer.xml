@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
+=======
+>>>>>>> master/master
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -12,7 +15,11 @@
         <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_home"
+<<<<<<< HEAD
                 android:icon="@drawable/ic_menu_gallery"
+=======
+                android:icon="@drawable/ic_menu_camera"
+>>>>>>> master/master
                 android:title="@string/menu_home" />
             <item
                 android:id="@+id/nav_reuniones"
@@ -30,6 +37,17 @@
                 android:id="@+id/nav_grupos"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="@string/menu_grupos" />
+<<<<<<< HEAD
+=======
+            <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="@string/menu_slideshow" />
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_tools" />
+>>>>>>> master/master
         </group>
 
         <item android:title="@string/interactivo"
@@ -43,6 +61,7 @@
                     android:id="@+id/nav_send"
                     android:icon="@drawable/ic_menu_send"
                     android:title="@string/menu_send" />
+<<<<<<< HEAD
                 <item
                     android:id="@+id/nav_informe"
                     android:icon="@drawable/ic_menu_send"
@@ -52,3 +71,9 @@
     <group />
     <!--    </ScrollView>-->
 </menu>
+=======
+            </menu>
+        </item>
+<!--    </ScrollView>-->
+</menu>
+>>>>>>> master/master

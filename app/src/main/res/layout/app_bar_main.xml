@@ -10,17 +10,35 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:theme="@style/AppTheme.AppBarOverlay"
         >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+=======
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+>>>>>>> master/master
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             >
+<<<<<<< HEAD
 
+=======
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MisericApp v.1.0.2"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                />
+>>>>>>> master/master
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
