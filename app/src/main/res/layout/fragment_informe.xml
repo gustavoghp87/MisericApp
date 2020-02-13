@@ -20,13 +20,10 @@
         />
 
     <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".MainActivity">
-
-        <include layout="@layout/actionbar_toolbar"/>
+        >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -41,26 +38,87 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="18dp"
             android:layout_marginTop="50dp"
             android:padding="15dp"
             >
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="HORAS"
-                />
-            <com.google.android.material.textfield.TextInputEditText
+                android:theme="@style/EditTextGray"
+                android:layout_marginTop="15dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/send_horas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_sendReport"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="HORAS"
-                />
-            <com.google.android.material.textfield.TextInputEditText
+                android:theme="@style/EditTextGray"
+                android:layout_marginTop="15dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/send_public"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_sendPublic"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="HORAS"
+                android:theme="@style/EditTextGray"
+                android:layout_marginTop="15dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/send_videos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_sendVideos"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/EditTextGray"
+                android:layout_marginTop="15dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/send_revisitas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_sendRevisitas"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/EditTextGray"
+                android:layout_marginTop="15dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/send_estudios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_sendEstudios"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/button_sendreport"
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:text="@string/send_report"
+                android:textSize="18sp"
+                android:theme="@style/RaisedButtonDark"
                 />
+
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>

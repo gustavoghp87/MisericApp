@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import java.util.Locale;
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity
+{
     private Button mButtonSignOut;
     private FirebaseAuth mAuth;
     //    private Switch switch_en;
@@ -24,7 +24,8 @@ public class SettingsActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         showToolbar(getResources().getString(R.string.action_settings), true);
@@ -34,7 +35,8 @@ public class SettingsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mButtonSignOut = findViewById(R.id.btnSignOut);
 
-        mButtonSignOut.setOnClickListener(new View.OnClickListener() {
+        mButtonSignOut.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
@@ -52,7 +54,8 @@ public class SettingsActivity extends AppCompatActivity {
         switch_en.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
                 if (isChecked) {
                     sharedPreferences.edit().putInt("language", 2).apply();
                     Toast.makeText(getApplicationContext(), "Switch is on", Toast.LENGTH_LONG).show();
@@ -65,7 +68,8 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        switch (language) {
+        switch (language)
+        {
             case 1:
                 changeLanguage("en");
                 break;
@@ -106,7 +110,8 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public void changeLanguage(String language2) {
+    public void changeLanguage(String language2)
+    {
         Locale locale = new Locale(language2);
         Locale.setDefault(locale);
         Configuration config = new Configuration();

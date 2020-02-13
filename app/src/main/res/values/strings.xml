@@ -35,4 +35,11 @@
     <string name="switch_dark">Modo Oscuro</string>
     <string name="menu_informe">Enviar el Informe del mes</string>
     <string name="provisorio">ACCESO PROVISORIO</string>
+    <string name="send_report">ENVIAR INFORME</string>
+    <string name="hint_sendReport">HORAS...</string>
+    <string name="hint_sendPublic">PUBLICACIONES...</string>
+    <string name="hint_sendVideos">VIDEOS...</string>
+    <string name="hint_sendRevisitas">REVISITAS</string>
+    <string name="hint_sendEstudios">ESTUDIOS...</string>
+    <string name="nota_report">Nota: Si informa fracciones de hora, use el punto como separador, no la coma.</string>
 </resources>

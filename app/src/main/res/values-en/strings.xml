@@ -4,12 +4,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Plaza de la Misericordia 2020</string>
-    <string name="nav_header_subtitle">ghc.8786@gmail.com</string>
+    <string name="nav_header_subtitle">Adm: ghc.8786@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Account Settings</string>
     <string name="version">MisericApp v.2.0</string>
     <string name="menu_home">Home</string>
-    <string name="menu_reuniones">Meetings programs</string>
+    <string name="menu_reuniones">Meeting programs</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="hint_email">Email</string>
@@ -24,8 +24,8 @@
     <string name="text_button_login">ENTER NOW</string>
     <string name="dont_have_account">Do not have account?</string>
     <string name="create_here">, create here</string>
-    <string name="menu_salidas">Preaching meeting point</string>
-    <string name="menu_sonido">Mechanics Assignments</string>
+    <string name="menu_salidas">Preaching meeting points</string>
+    <string name="menu_sonido">Mechanic Assignments</string>
     <string name="menu_grupos">Preaching Groups</string>
     <string name="interactivo">Interactive [coming soon]</string>
     <string name="homeiniciodesesion">LOGING</string>
@@ -35,4 +35,11 @@
     <string name="switch_dark">Dark Mode</string>
     <string name="menu_informe">Send Preaching Report</string>
     <string name="provisorio">PROVISIONAL ACCESS</string>
+    <string name="send_report">SEND REPORT</string>
+    <string name="hint_sendReport">HOURS...</string>
+    <string name="hint_sendPublic">PUBLICATIONS...</string>
+    <string name="hint_sendVideos">VIDEOS...</string>
+    <string name="hint_sendRevisitas">REVISITS...</string>
+    <string name="hint_sendEstudios">STUDIES...</string>
+    <string name="nota_report"> </string>
 </resources>
