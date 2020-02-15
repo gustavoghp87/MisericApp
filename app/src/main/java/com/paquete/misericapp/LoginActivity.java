@@ -1,8 +1,9 @@
 package com.paquete.misericapp;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,6 +14,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
+
 public class LoginActivity extends AppCompatActivity
 {
     private EditText mEditTextEmail;
@@ -22,19 +25,30 @@ public class LoginActivity extends AppCompatActivity
     private String password;
 
     private FirebaseAuth mAuth;
+    SharedPreferences sharedPreferences;
 
-=======
-import androidx.appcompat.app.AppCompatActivity;
-
-public class LoginActivity extends AppCompatActivity
-{
->>>>>>> master/master
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
+        int theme = sharedPreferences.getInt("THEME", 1);
+        switch (theme)
+        {
+            case 1: setTheme(R.style.AppTheme);
+                break;
+            case 2: setTheme(R.style.AppTheme2);
+                break;
+        }
+        sharedPreferences = getSharedPreferences("LANG", MODE_PRIVATE);
+        int lang = sharedPreferences.getInt("language", 1);
+        switch (lang)
+        {
+            case 1: changeLanguage("es");
+                break;
+            case 2: changeLanguage("en");
+        }
         setContentView(R.layout.activity_login);
-<<<<<<< HEAD
 
         mEditTextEmail      = findViewById(R.id.username);
         mEditTextPassword   = findViewById(R.id.password);
@@ -80,8 +94,6 @@ public class LoginActivity extends AppCompatActivity
                 }
             }
         });
-=======
->>>>>>> master/master
     }
 
     public void goCreateAccount(View view)
@@ -95,7 +107,6 @@ public class LoginActivity extends AppCompatActivity
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-<<<<<<< HEAD
 
     public void goEnterProv(View view)
     {
@@ -103,6 +114,12 @@ public class LoginActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-=======
->>>>>>> master/master
+    public void changeLanguage(String language2)
+    {
+        Locale locale = new Locale(language2);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
 }

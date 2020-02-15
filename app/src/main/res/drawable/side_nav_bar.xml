@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> master/master
     android:shape="rectangle">
     <gradient
         android:angle="135"

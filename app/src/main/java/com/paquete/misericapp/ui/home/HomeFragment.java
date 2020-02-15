@@ -15,23 +15,14 @@ public class HomeFragment extends Fragment
 {
     private HomeViewModel homeViewModel;
 
-<<<<<<< HEAD
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-=======
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState)
->>>>>>> master/master
     {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-<<<<<<< HEAD
 
         final TextView textView = root.findViewById(R.id.text_home);
 
-=======
-        final TextView textView = root.findViewById(R.id.text_home);
->>>>>>> master/master
         homeViewModel.getText().observe(this, new Observer<String>()
         {
             @Override

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
     //light mode:
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
@@ -701,15 +700,3 @@
 
     <color name="md_statusbar_translucent">#4000</color>
 </resources>
-=======
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-
-    <color name="editTextColorWhite">#ffffff</color>
-    <color name="editTextColorBlack">#000000</color>
-    <color name="backgroundtext_card">#53292929</color>
-
-    <color name="editTextColorGray">#636363</color>
-</resources>
->>>>>>> master/master

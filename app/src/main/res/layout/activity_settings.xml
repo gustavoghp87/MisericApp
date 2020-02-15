@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?colorPrimaryDark">
 
     <include layout="@layout/actionbar_toolbar"/>
 
@@ -17,34 +18,61 @@
         />
 
     <LinearLayout
-        android:layout_width="220dp"
+        android:layout_width="350dp"
         android:layout_height="80dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         >
-        <Switch
-            android:id="@+id/switch_dark"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/switch_dark"
-            android:layout_marginTop="10dp"
-            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnDark"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnDarky"
+                android:theme="@style/RaisedButtonDark"
+                />
+            <Button
+                android:id="@+id/btnLight"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnLighty"
+                android:layout_toRightOf="@+id/btnDark"
+                android:theme="@style/RaisedButtonDark"
+                />
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="220dp"
+        android:layout_width="350dp"
         android:layout_height="80dp"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         >
-        <Switch
-            android:id="@+id/switch_english"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="English Version"
-            android:layout_marginTop="10dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnEnglish"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnEnglishy"
+                android:theme="@style/RaisedButtonDark"
+                />
+            <Button
+                android:id="@+id/btnEspaniol"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnEspanioly"
+                android:layout_toRightOf="@+id/btnEnglish"
+                android:theme="@style/RaisedButtonDark"
+                />
+        </RelativeLayout>
     </LinearLayout>
 
     <Button
@@ -53,7 +81,6 @@
         android:layout_height="100dp"
         android:text="@string/button_logout"
         android:theme="@style/RaisedButtonDark"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         />
-
 </LinearLayout>

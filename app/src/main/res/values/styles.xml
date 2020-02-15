@@ -1,21 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-<<<<<<< HEAD
-        <item name="background">@android:color/white</item>
-=======
->>>>>>> master/master
-    </style>
-
-    <style name="AppTheme.NoActionBar">
+        <item name="colorPrimaryDark">@color/md_white_1000</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="background">@color/md_white_1000</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>​
+        <item name="colorSwitchThumbNormal">@color/colorPrimary</item>
+        <item name="android:colorForeground">@color/colorPrimary</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/colorPrimary</item>​
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        //texto
+        <item name="android:textColorHint">@color/editTextColorBlack</item>
+        <item name="android:textSize">@dimen/edittext_textsize_login</item>
+        <item name="android:textColorPrimary">@color/editTextColorBlack</item>
+        <item name="android:colorAccent">@color/editTextColorBlack</item>
+        <item name="colorControlNormal">@color/editTextColorBlack</item>
+        <item name="colorControlActivated">@color/editTextColorBlack</item>
     </style>
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -27,23 +35,6 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="EditTextWhite" parent="TextAppearance.AppCompat">
-        <item name="android:textColorHint">@color/editTextColorWhite</item>
-        <item name="android:textSize">@dimen/edittext_textsize_login</item>
-        <item name="android:textColorPrimary">@color/editTextColorWhite</item>
-        <item name="android:colorAccent">@color/editTextColorWhite</item>
-        <item name="colorControlNormal">@color/editTextColorWhite</item>
-        <item name="colorControlActivated">@color/editTextColorWhite</item>
-    </style>
-
-    <style name="EditTextBlack" parent="TextAppearance.AppCompat">
-        <item name="android:textColorHint">@color/editTextColorBlack</item>
-        <item name="android:textSize">@dimen/edittext_textsize_login</item>
-        <item name="android:textColorPrimary">@color/editTextColorBlack</item>
-        <item name="android:colorAccent">@color/editTextColorBlack</item>
-        <item name="colorControlNormal">@color/editTextColorBlack</item>
-        <item name="colorControlActivated">@color/editTextColorBlack</item>
-    </style>
 
     <style name="EditTextGray" parent="TextAppearance.AppCompat">
         <item name="android:textColorHint">@color/editTextColorGray</item>
@@ -54,20 +45,28 @@
         <item name="colorControlActivated">@color/editTextColorGray</item>
     </style>
 
-<<<<<<< HEAD
 
     //DARK MODE
     <style
-        name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/darkColorPrimary</item>
-        <item name="colorPrimaryDark">@color/darkColorPrimaryDark</item>
-        <item name="colorAccent">@color/darkColorAccent</item>
-        <item name="background">@color/darkColorPrimaryDark</item>
+        name="AppTheme2" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/md_black_1000</item>
+        <item name="colorPrimaryDark">@color/md_black_1000</item>
+        <item name="colorAccent">@color/md_black_1000</item>
+        <item name="background">@color/md_black_1000</item>
+        <item name="colorControlHighlight">@color/md_black_1000</item>​
+        <item name="colorSwitchThumbNormal">@color/md_pink_500_25</item>
+        <item name="android:colorForeground">@color/md_pink_500_25</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/md_indigo_500</item>
+
+        //texto
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:textSize">@dimen/edittext_textsize_login</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:colorAccent">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
     </style>
 
 
-
-
-=======
->>>>>>> master/master
 </resources>

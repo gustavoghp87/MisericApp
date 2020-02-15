@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,13 +6,6 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home"
     >
-=======
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
->>>>>>> master/master
 
     <fragment
         android:id="@+id/nav_home"
@@ -22,7 +14,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-<<<<<<< HEAD
         android:id="@+id/nav_reuniones"
         android:name="com.paquete.misericapp.ui.reuniones.ReunionesFragment"
         android:label="@string/menu_salidas"
@@ -45,24 +36,6 @@
         android:name="com.paquete.misericapp.ui.grupos.GruposFragment"
         android:label="@string/menu_grupos"
         tools:layout="@layout/fragment_grupos" />
-=======
-        android:id="@+id/nav_gallery"
-        android:name="com.paquete.misericapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.paquete.misericapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.paquete.misericapp.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
->>>>>>> master/master
 
     <fragment
         android:id="@+id/nav_share"
@@ -75,13 +48,10 @@
         android:name="com.paquete.misericapp.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
-<<<<<<< HEAD
 
     <fragment
         android:id="@+id/nav_informe"
         android:name="com.paquete.misericapp.ui.informe.InformeFragment"
         android:label="@string/menu_informe"
         tools:layout="@layout/fragment_informe" />
-=======
->>>>>>> master/master
 </navigation>
