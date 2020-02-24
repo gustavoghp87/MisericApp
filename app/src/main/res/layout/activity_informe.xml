@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?background">
 
     <include layout="@layout/actionbar_toolbar"/>
 
@@ -16,10 +17,11 @@
         android:layout_marginTop="12dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="MARZO 2020"
-        android:background="@color/md_purple_A700"
+        android:text="@string/mes_informe"
+        android:background="?colorPrimary"
         android:gravity="center"
         android:textStyle="bold"
+        android:textColor="?editTextColor"
         />
 
     <RelativeLayout
@@ -58,6 +60,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_sendReport"
+                        android:textSize="@dimen/informe"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -71,6 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_sendPublic"
+                        android:textSize="@dimen/informe"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -84,6 +88,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_sendVideos"
+                        android:textSize="@dimen/informe"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -97,6 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_sendRevisitas"
+                        android:textSize="@dimen/informe"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -110,6 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_sendEstudios"
+                        android:textSize="@dimen/informe"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +133,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/nota_report"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:textSize="17sp"
                     />
 
             </LinearLayout>

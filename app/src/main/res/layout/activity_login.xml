@@ -20,22 +20,22 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.65"
+            android:layout_height="200dp"
             >
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="236dp"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:background="@drawable/tablero" />
+                android:layout_width="305dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="80dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/jw_logo" />
         </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
             android:fillViewport="true" >
 
             <LinearLayout

@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
+        android:theme="@style/AppThemeX.AppBarOverlay"
         >
 
         <androidx.appcompat.widget.Toolbar
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:popupTheme="@style/AppThemeX.PopupOverlay"
             >
 
         </androidx.appcompat.widget.Toolbar>
@@ -31,7 +31,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_margin="13dp"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

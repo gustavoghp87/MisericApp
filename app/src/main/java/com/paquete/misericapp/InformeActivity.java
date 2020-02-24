@@ -1,4 +1,6 @@
 package com.paquete.misericapp;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -6,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.util.Locale;
 
 public class InformeActivity extends AppCompatActivity
 {
@@ -28,9 +32,29 @@ public class InformeActivity extends AppCompatActivity
     int revisitas_send;
     int estudios_send;
 
+    SharedPreferences sharedPreferences;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
+        sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
+        int theme = sharedPreferences.getInt("THEME", 1);
+        switch (theme)
+        {
+            case 1: setTheme(R.style.AppTheme);
+                break;
+            case 2: setTheme(R.style.AppTheme2);
+                break;
+        }
+        sharedPreferences = getSharedPreferences("LANG", MODE_PRIVATE);
+        int lang = sharedPreferences.getInt("language", 1);
+        switch (lang)
+        {
+            case 1: changeLanguage("es");
+                break;
+            case 2: changeLanguage("en");
+        }
         setContentView(R.layout.activity_informe);
 
         showToolbar("ENVIAR INFORME DEL MES", true);
@@ -94,5 +118,14 @@ public class InformeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
+    }
+
+    public void changeLanguage(String language2)
+    {
+        Locale locale = new Locale(language2);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 }

@@ -1,11 +1,10 @@
 <resources>
-
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/md_white_1000</item>
-        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/md_deep_purple_A700</item>
+        <item name="colorPrimaryDark">@color/md_deep_purple_A700</item>
+        <item name="colorAccent">@color/md_deep_purple_A700</item>
         <item name="background">@color/md_white_1000</item>
         <item name="colorControlHighlight">@color/colorPrimary</item>​
         <item name="colorSwitchThumbNormal">@color/colorPrimary</item>
@@ -16,22 +15,25 @@
         <item name="windowNoTitle">true</item>
 
         //texto
+        <item name="android:textColor">@color/md_black_1000</item>
         <item name="android:textColorHint">@color/editTextColorBlack</item>
         <item name="android:textSize">@dimen/edittext_textsize_login</item>
         <item name="android:textColorPrimary">@color/editTextColorBlack</item>
         <item name="android:colorAccent">@color/editTextColorBlack</item>
         <item name="colorControlNormal">@color/editTextColorBlack</item>
         <item name="colorControlActivated">@color/editTextColorBlack</item>
+
+        <item name="editTextColor">@color/md_white_1000</item>
     </style>
 
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppThemeX.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppThemeX.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="RaisedButtonDark" parent="Theme.AppCompat.Light">
-        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
-        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorButtonNormal">@color/md_deep_purple_A700</item>
+        <item name="colorControlHighlight">@color/md_purple_400</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
@@ -39,7 +41,7 @@
     <style name="EditTextGray" parent="TextAppearance.AppCompat">
         <item name="android:textColorHint">@color/editTextColorGray</item>
         <item name="android:textSize">@dimen/edittext_textsize_login</item>
-        <item name="android:textColorPrimary">@color/editTextColorGray</item>
+        <item name="android:textColorPrimary">@color/md_black_1000</item>
         <item name="android:colorAccent">@color/editTextColorGray</item>
         <item name="colorControlNormal">@color/editTextColorGray</item>
         <item name="colorControlActivated">@color/editTextColorGray</item>
@@ -47,8 +49,7 @@
 
 
     //DARK MODE
-    <style
-        name="AppTheme2" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme2" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/md_black_1000</item>
         <item name="colorPrimaryDark">@color/md_black_1000</item>
         <item name="colorAccent">@color/md_black_1000</item>
@@ -60,13 +61,14 @@
         <item name="actionModeBackground">@color/md_indigo_500</item>
 
         //texto
+        <item name="android:textColor">@color/md_white_1000</item>
         <item name="android:textColorHint">@android:color/white</item>
         <item name="android:textSize">@dimen/edittext_textsize_login</item>
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:colorAccent">@android:color/white</item>
         <item name="colorControlNormal">@android:color/white</item>
         <item name="colorControlActivated">@android:color/white</item>
+
+        <item name="editTextColor">@color/md_white_1000</item>
     </style>
-
-
 </resources>

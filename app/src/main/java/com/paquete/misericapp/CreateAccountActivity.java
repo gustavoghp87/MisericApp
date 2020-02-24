@@ -3,6 +3,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
@@ -32,11 +35,29 @@ public class CreateAccountActivity extends AppCompatActivity
 
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
+        int theme = sharedPreferences.getInt("THEME", 1);
+        switch (theme)
+        {
+            case 1: setTheme(R.style.AppTheme);
+                break;
+            case 2: setTheme(R.style.AppTheme2);
+                break;
+        }
+        sharedPreferences = getSharedPreferences("LANG", MODE_PRIVATE);
+        int lang = sharedPreferences.getInt("language", 1);
+        switch (lang)
+        {
+            case 1: changeLanguage("es");
+                break;
+            case 2: changeLanguage("en");
+        }
         setContentView(R.layout.activity_create_account);
         showToolbar(getResources().getString(R.string.toolbar_title_createaccount), true);
 
@@ -132,5 +153,14 @@ public class CreateAccountActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
+    }
+
+    public void changeLanguage(String language2)
+    {
+        Locale locale = new Locale(language2);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 }

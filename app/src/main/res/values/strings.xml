@@ -2,15 +2,13 @@
     <string name="app_name">MisericApp</string>
     <string name="navigation_drawer_open">Abrir dibujador de navegación</string>
     <string name="navigation_drawer_close">Cerrar dibujador de navegación</string>
-    <string name="nav_header_title">Plaza de la Misericordia 2020</string>
-    <string name="nav_header_subtitle">ghc.8786@gmail.com</string>
     <string name="nav_header_desc">Encabezado de Navegación</string>
     <string name="action_settings">Opciones de la Cuenta</string>
 
     <string name="menu_home">Inicio</string>
-    <string name="menu_reuniones">Programas de las Reuniones</string>
-    <string name="menu_sonido">Asignaciones Mecánicas</string>
-    <string name="menu_grupos">Grupos de predicación</string>
+    <string name="menu_reuniones">Reuniones</string>
+    <string name="menu_sonido">Depto. Sonido</string>
+    <string name="menu_grupos">Grupos Predi.</string>
     <string name="menu_share">Compartir una Foto</string>
     <string name="menu_send">Enviar un Mensaje</string>
     <string name="hint_email">Email</string>
@@ -28,7 +26,7 @@
     <string name="menu_salidas">Salidas de Predicación</string>
     <string name="interactivo">Interactivo [próximamente]</string>
     <string name="homeiniciodesesion">INICIO DE USUARIO</string>
-    <string name="version">MisericApp v.3.0</string>
+    <string name="version">MisericApp v. 3.2</string>
     <string name="advertencia">A tener en cuenta: La contraseña elegida será visible para los administradores. No usar contraseña de otras redes.</string>
     <string name="button_logout">CERRAR SESIÓN</string>
     <string name="opciones_cuenta">Opciones de cuenta</string>
@@ -46,4 +44,5 @@
     <string name="btnLighty">Modo Claro</string>
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
+    <string name="mes_informe">MARZO 2020</string>
 </resources>

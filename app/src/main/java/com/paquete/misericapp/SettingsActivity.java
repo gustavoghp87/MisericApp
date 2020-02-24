@@ -1,6 +1,4 @@
 package com.paquete.misericapp;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -27,7 +25,7 @@ public class SettingsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);   //no puede estar dos veces
         int theme = sharedPreferences.getInt("THEME", 1);
         switch (theme)
         {
@@ -36,7 +34,6 @@ public class SettingsActivity extends AppCompatActivity
             case 2: setTheme(R.style.AppTheme2);
                 break;
         }
-        sharedPreferences = getSharedPreferences("LANG", MODE_PRIVATE);
         int lang = sharedPreferences.getInt("language", 1);
         switch (lang)
         {
@@ -57,7 +54,7 @@ public class SettingsActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 sharedPreferences.edit().putInt("THEME", 2).apply();
-                Toast.makeText(getApplicationContext(), "Modo oscuro activado", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Modo oscuro activado", Toast.LENGTH_SHORT).show();
                 reloadPage();
             }
         });
@@ -68,24 +65,10 @@ public class SettingsActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 sharedPreferences.edit().putInt("THEME", 1).apply();
-                Toast.makeText(getApplicationContext(), "Modo claro activado", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Modo claro activado", Toast.LENGTH_SHORT).show();
                 reloadPage();
             }
         });
-
-
-//        sharedPreferences = getSharedPreferences("IDIOMA", MODE_PRIVATE);
-//        int lang = sharedPreferences.getInt("LANG", 1);
-//        switch (lang)
-//        {
-//            case 1:
-//                changeLanguage("en");
-//                break;
-//
-//            case 2:
-//                changeLanguage("es");
-//                break;
-//        }
 
 
         // LOG OUT BUTTON
@@ -113,7 +96,7 @@ public class SettingsActivity extends AppCompatActivity
             {
                 sharedPreferences.edit().putInt("language", 2).apply();
                 changeLanguage("en");
-                Toast.makeText(getApplicationContext(), "English Language", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "English Language", Toast.LENGTH_SHORT).show();
                 reloadPage();
             }
         });
@@ -126,7 +109,7 @@ public class SettingsActivity extends AppCompatActivity
             {
                 sharedPreferences.edit().putInt("language", 1).apply();
                 changeLanguage("es");
-                Toast.makeText(getApplicationContext(), "Idioma Español", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Idioma Español", Toast.LENGTH_SHORT).show();
                 reloadPage();
             }
         });

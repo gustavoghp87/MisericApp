@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".CreateAccountActivity">
+    tools:context=".CreateAccountActivity"
+    android:background="?background">
 
     <include layout="@layout/actionbar_toolbar"/>
 
@@ -87,7 +88,7 @@
 
             <Button
                 android:id="@+id/joinUs"
-                android:layout_marginTop="@dimen/edittext_margin_createaccount"
+                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:text="@string/text_button_createaccount"
@@ -95,18 +96,14 @@
                 android:theme="@style/RaisedButtonDark"
                 />
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/advertencia"
                     android:layout_marginTop="20dp"
+                    android:textSize="17dp"
                     android:textAlignment="center"
                     />
-            </ScrollView>
 
         </LinearLayout>
     </ScrollView>

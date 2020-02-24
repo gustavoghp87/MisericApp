@@ -7,7 +7,6 @@
     <string name="nav_header_subtitle">Adm: ghc.8786@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Account Settings</string>
-    <string name="version">MisericApp v.3.0</string>
     <string name="menu_home">Home</string>
     <string name="menu_reuniones">Meeting programs</string>
     <string name="menu_share">Share</string>
@@ -46,4 +45,5 @@
     <string name="btnLighty">Light Mode</string>
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
+    <string name="mes_informe">MARCH 2020</string>
 </resources>
