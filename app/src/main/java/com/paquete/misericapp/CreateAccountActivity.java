@@ -42,6 +42,7 @@ public class CreateAccountActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
+
         int theme = sharedPreferences.getInt("THEME", 1);
         switch (theme)
         {
@@ -50,7 +51,7 @@ public class CreateAccountActivity extends AppCompatActivity
             case 2: setTheme(R.style.AppTheme2);
                 break;
         }
-        sharedPreferences = getSharedPreferences("LANG", MODE_PRIVATE);
+
         int lang = sharedPreferences.getInt("language", 1);
         switch (lang)
         {
@@ -106,6 +107,7 @@ public class CreateAccountActivity extends AppCompatActivity
         });
     }
 
+
     private void registerUser()
     {
         mAuth.createUserWithEmailAndPassword(email1, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>()
@@ -115,11 +117,12 @@ public class CreateAccountActivity extends AppCompatActivity
             {
                 if(task1.isSuccessful())
                 {
+                    String id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                     Map <String, Object> map = new HashMap<>();
                     map.put("name", name1);
                     map.put("email", email1);
                     map.put("password", password1);
-                    String id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+                    map.put("uid", id);
 
                     mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>()
                     {

@@ -32,6 +32,12 @@ public class LoginActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
+
+        //login
+        int loging = sharedPreferences.getInt("LOGIN", 1);
+        if (loging == 2) { enterApp();}
+
+        //theme
         int theme = sharedPreferences.getInt("THEME", 1);
         switch (theme)
         {
@@ -40,7 +46,8 @@ public class LoginActivity extends AppCompatActivity
             case 2: setTheme(R.style.AppTheme2);
                 break;
         }
-        sharedPreferences = getSharedPreferences("LANG", MODE_PRIVATE);
+
+        //language
         int lang = sharedPreferences.getInt("language", 1);
         switch (lang)
         {
@@ -85,6 +92,7 @@ public class LoginActivity extends AppCompatActivity
             {
                 if (task.isSuccessful())
                 {
+                    sharedPreferences.edit().putInt("LOGIN", 2).apply();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 }
@@ -121,5 +129,10 @@ public class LoginActivity extends AppCompatActivity
         Configuration config = new Configuration();
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    private void enterApp() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

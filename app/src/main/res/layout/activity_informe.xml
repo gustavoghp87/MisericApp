@@ -24,11 +24,7 @@
         android:textColor="?editTextColor"
         />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        >
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -52,8 +48,13 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/EditTextGray"
                     android:layout_marginTop="5dp"
+                    android:textColorHint="@color/editTextColorGray"
+                    android:textSize="@dimen/edittext_textsize_login"
+                    android:textColorPrimary="@color/md_black_1000"
+                    android:colorAccent="@color/editTextColorGray"
+                    android:colorControlNormal="@color/editTextColorGray"
+                    android:colorControlActivated="@color/editTextColorGray"
                     >
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/send_horas"
@@ -66,8 +67,13 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/EditTextGray"
                     android:layout_marginTop="5dp"
+                    android:textColorHint="@color/editTextColorGray"
+                    android:textSize="@dimen/edittext_textsize_login"
+                    android:textColorPrimary="@color/md_black_1000"
+                    android:colorAccent="@color/editTextColorGray"
+                    android:colorControlNormal="@color/editTextColorGray"
+                    android:colorControlActivated="@color/editTextColorGray"
                     >
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/send_public"
@@ -80,8 +86,13 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/EditTextGray"
                     android:layout_marginTop="5dp"
+                    android:textColorHint="@color/editTextColorGray"
+                    android:textSize="@dimen/edittext_textsize_login"
+                    android:textColorPrimary="@color/md_black_1000"
+                    android:colorAccent="@color/editTextColorGray"
+                    android:colorControlNormal="@color/editTextColorGray"
+                    android:colorControlActivated="@color/editTextColorGray"
                     >
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/send_videos"
@@ -94,8 +105,13 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/EditTextGray"
                     android:layout_marginTop="5dp"
+                    android:textColorHint="@color/editTextColorGray"
+                    android:textSize="@dimen/edittext_textsize_login"
+                    android:textColorPrimary="@color/md_black_1000"
+                    android:colorAccent="@color/editTextColorGray"
+                    android:colorControlNormal="@color/editTextColorGray"
+                    android:colorControlActivated="@color/editTextColorGray"
                     >
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/send_revisitas"
@@ -108,8 +124,13 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/EditTextGray"
                     android:layout_marginTop="5dp"
+                    android:textColorHint="@color/editTextColorGray"
+                    android:textSize="@dimen/edittext_textsize_login"
+                    android:textColorPrimary="@color/md_black_1000"
+                    android:colorAccent="@color/editTextColorGray"
+                    android:colorControlNormal="@color/editTextColorGray"
+                    android:colorControlActivated="@color/editTextColorGray"
                     >
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/send_estudios"
@@ -127,7 +148,7 @@
                     android:layout_height="75dp"
                     android:text="@string/send_report"
                     android:textSize="18sp"
-                    android:theme="@style/RaisedButtonDark"
+                    android:background="?colorAccent"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,5 +161,4 @@
 
             </LinearLayout>
         </ScrollView>
-    </RelativeLayout>
 </LinearLayout>

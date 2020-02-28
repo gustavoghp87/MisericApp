@@ -1,4 +1,5 @@
 package com.paquete.misericapp;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -6,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import java.util.Locale;
 
 public class InformeActivity extends AppCompatActivity
@@ -76,13 +78,13 @@ public class InformeActivity extends AppCompatActivity
                 if (horas.isEmpty()) {horas = "0";}
 
                 if (horas.indexOf('.') == -1)
-                    {
-                        horas_send_int = Integer.parseInt(horas);
-                    }
+                {
+                    horas_send_int = Integer.parseInt(horas);
+                }
                 else
-                    {
-                        horas_send_float = Float.parseFloat(horas);
-                    }
+                {
+                    horas_send_float = Float.parseFloat(horas);
+                }
 
                 publicaciones = mEditTextPublic.getText().toString();
                 if (publicaciones.isEmpty()) {publicaciones = "0";}
@@ -101,15 +103,55 @@ public class InformeActivity extends AppCompatActivity
                 estudios_send = Integer.parseInt(estudios);
 
                 if (horas.indexOf('.') == -1)
-                    {
-                        Toast.makeText(InformeActivity.this, "Horas: " + horas_send_int + ", publicaciones: " + publicaciones_send + ", videos: " + videos_send + ", revisitas: " + revisitas_send + ", estudios: " + estudios_send, Toast.LENGTH_SHORT).show();
-                    }
+                {
+                    informeOkInt();
+                }
                 else
-                    {
-                        Toast.makeText(InformeActivity.this, "Horas: " + horas_send_float + ", publicaciones: " + publicaciones_send + ", videos: " + videos_send + ", revisitas: " + revisitas_send + ", estudios: " + estudios_send, Toast.LENGTH_SHORT).show();
-                    }
+                {
+                    informeOkFloat();
+                }
             }
         });
+    }
+
+    public void informeOkInt() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(InformeActivity.this, R.style.dialogo);
+        builder.setTitle("INFORME MARZO");
+        builder.setMessage("Confirma tu informe por favor:\n Horas: " + horas_send_int + "\n Publicaciones: " + publicaciones_send + "\n Videos: " + videos_send + "\n Revisitas: " + revisitas_send + "\n Estudios: " + estudios_send)
+            .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(InformeActivity.this, "ENVIADO Horas: " + horas_send_int + ", publicaciones: " + publicaciones_send + ", videos: " + videos_send + ", revisitas: " + revisitas_send + ", estudios: " + estudios_send, Toast.LENGTH_SHORT).show();
+                }
+            })
+            .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(InformeActivity.this, "CANCELADO", Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
+                }
+            })
+            .show();
+    }
+
+    public void informeOkFloat() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(InformeActivity.this);
+        builder.setTitle("INFORME MARZO");
+        builder.setMessage("Confirma tu informe por favor:\n Horas: " + horas_send_float + "\n Publicaciones: " + publicaciones_send + "\n Videos: " + videos_send + "\n Revisitas: " + revisitas_send + "\n Estudios: " + estudios_send)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(InformeActivity.this, "ENVIADO Horas: " + horas_send_float + ", publicaciones: " + publicaciones_send + ", videos: " + videos_send + ", revisitas: " + revisitas_send + ", estudios: " + estudios_send, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(InformeActivity.this, "CANCELADO", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 
     public void showToolbar(String title, boolean upButton)

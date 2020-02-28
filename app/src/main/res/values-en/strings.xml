@@ -46,4 +46,20 @@
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
     <string name="mes_informe">MARCH 2020</string>
+
+    <array name="mes">
+        <item>January 2020</item>
+        <item>February 2020</item>
+        <item>March 2020</item>
+        <item>April 2020</item>
+        <item>May 2020</item>
+        <item>June 2020</item>
+        <item>July 2020</item>
+        <item>August 2020</item>
+        <item>September 2020</item>
+        <item>October 2020</item>
+        <item>November 2020</item>
+        <item>December 2020</item>
+        <item>January 2021</item>
+    </array>
 </resources>

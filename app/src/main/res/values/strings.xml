@@ -41,8 +41,24 @@
     <string name="hint_sendEstudios">ESTUDIOS...</string>
     <string name="nota_report">Nota: Si informa fracciones de hora, use el punto como separador, no la coma.</string>
     <string name="btnDarky">Modo Oscuro</string>
-    <string name="btnLighty">Modo Claro</string>
+    <string name="btnLighty">Modo       Claro</string>
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
     <string name="mes_informe">MARZO 2020</string>
+
+    <array name="mes">
+        <item>Enero 2020</item>
+        <item>Febrero 2020</item>
+        <item>Marzo 2020</item>
+        <item>Abril 2020</item>
+        <item>Mayo 2020</item>
+        <item>Junio 2020</item>
+        <item>Julio 2020</item>
+        <item>Agosto 2020</item>
+        <item>Septiembre 2020</item>
+        <item>Octubre 2020</item>
+        <item>Noviembre 2020</item>
+        <item>Diciembre 2020</item>
+        <item>Enero 2021</item>
+    </array>
 </resources>

@@ -26,6 +26,7 @@ public class SettingsActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);   //no puede estar dos veces
+
         int theme = sharedPreferences.getInt("THEME", 1);
         switch (theme)
         {
@@ -34,6 +35,7 @@ public class SettingsActivity extends AppCompatActivity
             case 2: setTheme(R.style.AppTheme2);
                 break;
         }
+
         int lang = sharedPreferences.getInt("language", 1);
         switch (lang)
         {
@@ -80,6 +82,8 @@ public class SettingsActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 sharedPreferences.edit().putInt("THEME", 1).apply();
+                sharedPreferences.edit().putInt("LOGIN", 1).apply();
+                sharedPreferences.edit().putInt("language", 1).apply();
                 mAuth.signOut();
                 startActivity(new Intent(SettingsActivity.this, OpenActivity.class));
                 finish();

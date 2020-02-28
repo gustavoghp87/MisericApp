@@ -20,5 +20,7 @@
     <dimen name="width_cricleimageprofile">40dp</dimen>
     <dimen name="width_circleimageprofile">40dp</dimen>
     <dimen name="width_circleimagetoolbar">40dp</dimen>
+    <dimen name="crear_cuenta_top_margin">12dp</dimen>
+    <dimen name="crear_cuenta_text_size">17sp</dimen>
 
 </resources>
