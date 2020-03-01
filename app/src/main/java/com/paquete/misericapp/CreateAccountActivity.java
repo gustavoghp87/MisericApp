@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ public class CreateAccountActivity extends AppCompatActivity
     private String confirm_password1;
 
     FirebaseAuth mAuth;
+    FirebaseUser user;
     DatabaseReference mDatabase;
     SharedPreferences sharedPreferences;
 
@@ -87,7 +89,7 @@ public class CreateAccountActivity extends AppCompatActivity
                     {
                         if (password1.length() >= 6)
                         {
-                            registerUser();
+                            createAccount();
                         }
                         else
                         {
@@ -108,7 +110,7 @@ public class CreateAccountActivity extends AppCompatActivity
     }
 
 
-    private void registerUser()
+    private void createAccount()
     {
         mAuth.createUserWithEmailAndPassword(email1, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>()
         {
@@ -117,30 +119,7 @@ public class CreateAccountActivity extends AppCompatActivity
             {
                 if(task1.isSuccessful())
                 {
-                    String id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-                    Map <String, Object> map = new HashMap<>();
-                    map.put("name", name1);
-                    map.put("email", email1);
-                    map.put("password", password1);
-                    map.put("uid", id);
-
-                    mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>()
-                    {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task2)
-                        {
-                            if (task2.isSuccessful())
-                            {
-                                Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                            else
-                            {
-                                Toast.makeText(CreateAccountActivity.this, "Algo [2] ha fallado \n No se pudo crear el usuario correctamente \n Consulte al administrador", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                    agregarEnDatabase();
                 }
                 else
                 {
@@ -148,6 +127,42 @@ public class CreateAccountActivity extends AppCompatActivity
                 }
             }
         });
+    }
+
+    private void agregarEnDatabase()
+    {
+        String id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        Map <String, Object> map = new HashMap<>();
+        map.put("name", name1);
+        map.put("email", email1);
+        map.put("uid", id);
+        mDatabase.child("Users").child(name1).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>()
+        {
+            @Override
+            public void onComplete(@NonNull Task<Void> task2)
+            {
+                if (task2.isSuccessful())
+                {
+                    conclusionCreate();
+                }
+                else
+                {
+                    Toast.makeText(CreateAccountActivity.this, "Algo [2] ha fallado \n No se pudo crear el usuario correctamente \n Consulte al administrador", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void conclusionCreate()
+    {
+        sharedPreferences.edit().putString("userName", name1).apply();
+        sharedPreferences.edit().putInt("LOGIN", 2).apply();
+        user = mAuth.getCurrentUser();
+        user.sendEmailVerification();
+        Toast.makeText(CreateAccountActivity.this, "RECIBIRÁ UN EMAIL PARA CONFIRMAR ESTA CUENTA\n(REVISAR SPAM)", Toast.LENGTH_SHORT).show();
+
+    startActivity(new Intent(CreateAccountActivity.this, LoginActivity.class));
+        finish();
     }
 
     public void showToolbar(String title, boolean upButton)

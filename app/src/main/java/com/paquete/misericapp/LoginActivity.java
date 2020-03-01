@@ -13,117 +13,118 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
+import com.google.firebase.auth.FirebaseUser;
 import java.util.Locale;
 
-public class LoginActivity extends AppCompatActivity
-{
+public class LoginActivity extends AppCompatActivity {
     private EditText mEditTextEmail;
     private EditText mEditTextPassword;
 
     private String email;
     private String password;
 
-    private FirebaseAuth mAuth;
     SharedPreferences sharedPreferences;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
 
         //login
         int loging = sharedPreferences.getInt("LOGIN", 1);
-        if (loging == 2) { enterApp();}
+        int verif = sharedPreferences.getInt("VERIF", 1);
+        if (loging == 2 && verif == 2) {enterApp();}
+        // Si valor 1 y verif 1: nada, a crear cuenta
+        // Si valor 1 y verif 2: a loguear
+        // Si valor 2 y verif 1: esperar o crear otra cuenta
+        // Si valor 2 y verif 2: entrar a main
 
         //theme
         int theme = sharedPreferences.getInt("THEME", 1);
-        switch (theme)
-        {
-            case 1: setTheme(R.style.AppTheme);
+        switch (theme) {
+            case 1:
+                setTheme(R.style.AppTheme);
                 break;
-            case 2: setTheme(R.style.AppTheme2);
+            case 2:
+                setTheme(R.style.AppTheme2);
                 break;
         }
 
         //language
         int lang = sharedPreferences.getInt("language", 1);
-        switch (lang)
-        {
-            case 1: changeLanguage("es");
+        switch (lang) {
+            case 1:
+                changeLanguage("es");
                 break;
-            case 2: changeLanguage("en");
+            case 2:
+                changeLanguage("en");
         }
         setContentView(R.layout.activity_login);
 
-        mEditTextEmail      = findViewById(R.id.username);
-        mEditTextPassword   = findViewById(R.id.password);
+        mEditTextEmail = findViewById(R.id.username);
+        mEditTextPassword = findViewById(R.id.password);
         Button mButtonLogin = findViewById(R.id.login);
 
-        mAuth = FirebaseAuth.getInstance();
-
-        mButtonLogin.setOnClickListener(new View.OnClickListener()
-        {
+        mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                email    = mEditTextEmail.getText().toString();
+            public void onClick(View v) {
+                email = mEditTextEmail.getText().toString();
                 password = mEditTextPassword.getText().toString();
-
                 if (!email.isEmpty() && !password.isEmpty())
                 {
                     loginUser();
                 }
-                else
-                {
+                else {
                     Toast.makeText(LoginActivity.this, "Complete los datos primero", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    private void loginUser()
-    {
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>()
-        {
+    private void loginUser() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task)
-            {
+            public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful())
                 {
-                    sharedPreferences.edit().putInt("LOGIN", 2).apply();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
-                }
-                else
-                {
-                    Toast.makeText(LoginActivity.this, "No se pudo iniciar sesión \n Revise los datos", Toast.LENGTH_SHORT).show();
+                    user = firebaseAuth.getCurrentUser();
+                    boolean emailVerified = user.isEmailVerified();
+                    if (emailVerified) {
+                        sharedPreferences.edit().putInt("LOGIN", 2).apply();
+                        sharedPreferences.edit().putInt("VERIF", 2).apply();
+                        startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+                        finish();
+                    }
+                    else {
+                        Toast.makeText(LoginActivity.this, "El22 email no ha sido verificado\nRevise la casilla de correo no deseado", Toast.LENGTH_SHORT).show();
+                        }
+                } else {
+                    Toast.makeText(LoginActivity.this, "No se pudo iniciar sesión \n Revise los datos o cree una cuenta", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    public void goCreateAccount(View view)
-    {
+    public void goCreateAccount(View view) {
         Intent intent = new Intent(this, CreateAccountActivity.class);
         startActivity(intent);
     }
 
-    public void goEnter (View view)
-    {
+    public void goEnter(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void goEnterProv(View view)
-    {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
+//    public void goEnterProv(View view)
+//    {
+//        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//        startActivity(intent);
+//    }
 
-    public void changeLanguage(String language2)
-    {
+    public void changeLanguage(String language2) {
         Locale locale = new Locale(language2);
         Locale.setDefault(locale);
         Configuration config = new Configuration();

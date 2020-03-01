@@ -90,15 +90,15 @@
                     android:textColorHighlight="?android:colorControlHighlight"
                     />
 
-                <Button
-                    android:id="@+id/loginprov"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="@string/provisorio"
-                    android:onClick="goEnterProv"
-                    android:layout_marginTop="15dp"
-                    android:background="?colorAccent"
-                    />
+<!--                <Button-->
+<!--                    android:id="@+id/loginprov"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:text="@string/provisorio"-->
+<!--                    android:onClick="goEnterProv"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:background="?colorAccent"-->
+<!--                    />-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

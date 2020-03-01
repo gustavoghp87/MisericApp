@@ -5,28 +5,37 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.view.MenuItem;
 import android.view.View;
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
     private AppBarConfiguration mAppBarConfiguration;
+    FloatingActionButton fab;
+    FloatingActionButton fab2;
     SharedPreferences sharedPreferences;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
+    String userUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences("VALUES", MODE_PRIVATE);
-        int theme = sharedPreferences.getInt("THEME", 1);
 
+        int theme = sharedPreferences.getInt("THEME", 1);
         switch(theme){
             case 1: setTheme(R.style.AppTheme);
                 break;
@@ -34,11 +43,28 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        userUID = user.getUid();
+        fab2 = findViewById(R.id.fab2);
+        fab2.hide();
+        if (userUID.equals("Gs245UrpIucQ3zgtseiIp0bnxMz1") || userUID.equals("1S8dUOm8gSYF2xHHqROMUFBvVi82")) {
+            Toast.makeText(this, "ADMINISTRADOR", Toast.LENGTH_LONG).show();
+            fab2.show();
+            fab2.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    startActivity(new Intent(MainActivity.this, ProfileReadOnly.class));
+                }
+            });
+        }
+
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
         {
             @Override

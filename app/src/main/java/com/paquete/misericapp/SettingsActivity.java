@@ -84,6 +84,7 @@ public class SettingsActivity extends AppCompatActivity
                 sharedPreferences.edit().putInt("THEME", 1).apply();
                 sharedPreferences.edit().putInt("LOGIN", 1).apply();
                 sharedPreferences.edit().putInt("language", 1).apply();
+                sharedPreferences.edit().putInt("VERIF", 1).apply();
                 mAuth.signOut();
                 startActivity(new Intent(SettingsActivity.this, OpenActivity.class));
                 finish();

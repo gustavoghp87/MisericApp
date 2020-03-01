@@ -26,8 +26,8 @@
     <string name="menu_salidas">Salidas de Predicación</string>
     <string name="interactivo">Interactivo [próximamente]</string>
     <string name="homeiniciodesesion">INICIO DE USUARIO</string>
-    <string name="version">MisericApp v. 3.2</string>
-    <string name="advertencia">A tener en cuenta: La contraseña elegida será visible para los administradores. No usar contraseña de otras redes.</string>
+    <string name="version">MisericApp v. 4.0</string>
+    <string name="advertencia">A tener en cuenta: La contraseña elegida no será visible para los administradores. Puede consultar el código fuente en github.com/gustavoghp87/misericapp</string>
     <string name="button_logout">CERRAR SESIÓN</string>
     <string name="opciones_cuenta">Opciones de cuenta</string>
     <string name="switch_dark">Modo Oscuro</string>
@@ -45,9 +45,9 @@
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
     <string name="mes_informe">MARZO 2020</string>
+    <string name="informesDB">Informes en la base de datos</string>
 
     <array name="mes">
-        <item>Enero 2020</item>
         <item>Febrero 2020</item>
         <item>Marzo 2020</item>
         <item>Abril 2020</item>

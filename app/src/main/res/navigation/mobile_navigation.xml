@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/nav_informe"
-        android:name="com.paquete.misericapp.ui.informe.InformeFragment"
+        android:name="com.paquete.misericapp.ui.informeInt.InformeFragment"
         android:label="@string/menu_informe"
         tools:layout="@layout/fragment_informe" />
 </navigation>

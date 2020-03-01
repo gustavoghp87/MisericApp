@@ -11,7 +11,7 @@
     <dimen name="edittext_textsize_login">22sp</dimen>
     <dimen name="textopening">40sp</dimen>
     <dimen name="marginbuttoningreso">30dp</dimen>
-    <dimen name="informe">17sp</dimen>
+    <dimen name="informeInt">17sp</dimen>
 
 
 
