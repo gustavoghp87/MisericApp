@@ -10,7 +10,7 @@ public class SalidasViewModel extends ViewModel
     public SalidasViewModel()
     {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("SALIDAS PARA LA PREDICACIÓN\nPLAZA MISERICORDIA");
     }
 
     public LiveData<String> getText()

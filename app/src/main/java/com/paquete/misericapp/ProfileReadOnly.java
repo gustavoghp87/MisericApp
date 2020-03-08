@@ -2,22 +2,18 @@ package com.paquete.misericapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.solver.widgets.Snapshot;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,28 +27,26 @@ public class ProfileReadOnly extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth mAuth;
     String userUID;
-//    ArrayAdapter<String> adapter;
-//    String[] default_items = new String[]{"Name", "Email", "uid"};
-//    DatabaseReference databaseReference;
-//    List<String> itemlist;
-//    String uid;
-//
-//    FirebaseDatabase mFirebaseDatabase;
-//    FirebaseAuth mAuth;
-//    FirebaseAuth.AuthStateListener mAuthListener;
-//    ListView mListView;
-//    private static final String TAG = "ViewDatabase";
+
+    DatabaseReference databaseInformeLectura;
+    Spinner spinnerLectura;
+    Button btnLectura;
+    String mesLectura;
+    String nombre1;
+    TextView mTextViewMes;
+
+    ListView listViewInformesX;
+    List<Informe> informes;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //permiso
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         userUID = user.getUid();
-
-        if (!userUID.equals("Gs245UrpIucQ3zgtseiIp0bnxMz1") && !userUID.equals("1S8dUOm8gSYF2xHHqROMUFBvVi82"))
-        {
+        if (!userUID.equals("Gs245UrpIucQ3zgtseiIp0bnxMz1") && !userUID.equals("1S8dUOm8gSYF2xHHqROMUFBvVi82")) {
             startActivity(new Intent(ProfileReadOnly.this, MainActivity.class));
         }
 
@@ -67,81 +61,65 @@ public class ProfileReadOnly extends AppCompatActivity {
                 setTheme(R.style.AppTheme2);
                 break;
         }
+
         setContentView(R.layout.activity_profile_read_only);
         showToolbar(getResources().getString(R.string.informesDB), true);
 
-//        mListView = findViewById(R.id.listView);
-//        mAuth = FirebaseAuth.getInstance();
-//        databaseReference = mFirebaseDatabase.getReference();
-//        FirebaseUser user = mAuth.getCurrentUser();
-//        uid = user.getUid();
-//
-//        mAuthListener = new FirebaseAuth.AuthStateListener()
-//        {
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth)
-//            {
-//                FirebaseUser user = firebaseAuth.getCurrentUser();
-//                if (user != null)
-//                {
-//                    Log.d(TAG, "onAuthStateChanged:signed_in: " + user.getUid());
-//                    toastMessage("Successfully signed in with: " +user.getEmail());
-//                } else {
-//                    Log.d(TAG, "onAuthStateChanged:signed_out: " + user.getUid());
-//                    toastMessage("Successfully signed out");
-//                }
-//            }
-//        };
-//
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                ShowData(dataSnapshot);
-//
-//                itemlist.clear();
-//                String user_name = dataSnapshot.child(uid).child("name").getValue(String.class);
-//                String user_email = dataSnapshot.child(uid).child("email").getValue(String.class);
-//                String user_uid = dataSnapshot.child(uid).child("uid").getValue(String.class);
-//
-//                itemlist.add(user_name);
-//                itemlist.add(user_email);
-//                itemlist.add(user_uid);
-//
-//                adapter = new ArrayAdapter<>(ProfileReadOnly.this, android.R.layout.simple_list_item_1, itemlist);
-//                l1.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        })
+        //asignación de mes
+        mesLectura = sharedPreferences.getString("MES_LECTURA", "Marzo 2020");
+        mTextViewMes = findViewById(R.id.textViewMes);
+        mTextViewMes.setText(mesLectura);
+
+        btnLectura = findViewById(R.id.btnLectura);
+        btnLectura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lecturaMes();
+            }
+        });
     }
 
-//    private void ShowData(DataSnapshot dataSnapshot) {
-//        for(DataSnapshot ds : dataSnapshot.getChildren()) {
-//            Informe informeSend = new Informe();
-//            informeSend.setName(ds.child(uid).getValue(Informe.class).getName());
-//            informeSend.setEmail(ds.child(uid).getValue(Informe.class).getName());
-//            informeSend.setUid(ds.child(uid).getValue(Informe.class).getName());
-//        }
-//    }
-//
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        mAuth.addAuthStateListener(mAuthListener);
-//    }
-//
-//    @Override
-//    public void onStop()
-//    {
-//        super.onStop();
-//        if (mAuthListener != null)
-//        {
-//            mAuth.removeAuthStateListener(mAuthListener);
-//        }
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        informes = new ArrayList<>();
+        listViewInformesX = findViewById(R.id.listViewInformes);
+//        String name1 = sharedPreferences.getString("userName", "error al cargar nombre desde memoria de dispositivo");
+//        String name1 = "Gustavo HP 16";
+//        String mesLectura = "Marzo 2020";
+
+        // carga para leer DB
+        databaseInformeLectura = FirebaseDatabase.getInstance().getReference("Informes");
+        databaseInformeLectura.child(mesLectura).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                informes.clear();
+                mTextViewMes = findViewById(R.id.textViewMes);
+                mTextViewMes.setText(mesLectura);
+
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        Informe informe = postSnapshot.getValue(Informe.class);
+                        informes.add(informe);
+                    }
+                    InformesList informeAdapter = new InformesList(ProfileReadOnly.this, informes);
+                    listViewInformesX.setAdapter(informeAdapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProfileReadOnly.this, "No encontré datos para este mes", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void lecturaMes() {
+        spinnerLectura = findViewById(R.id.spinner_lectura);
+        mesLectura = spinnerLectura.getSelectedItem().toString();
+        sharedPreferences.edit().putString("MES_LECTURA", mesLectura).apply();
+        startActivity(new Intent(ProfileReadOnly.this, ProfileReadOnly.class));
+    }
 
     public void showToolbar(String title, boolean upButton)
     {

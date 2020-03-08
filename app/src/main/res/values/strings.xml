@@ -48,6 +48,7 @@
     <string name="informesDB">Informes en la base de datos</string>
 
     <array name="mes">
+        <item>[Elegir mes]</item>
         <item>Febrero 2020</item>
         <item>Marzo 2020</item>
         <item>Abril 2020</item>

@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.paquete.misericapp.ProfileReadOnly">
 
     <include layout="@layout/actionbar_toolbar"/>
 
-    <ListView
-        android:id="@+id/listView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="?colorPrimary">
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_lectura"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/mes"
+            android:dropDownWidth="match_parent"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:background="?colorPrimary"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/md_white_1000"
+            android:popupBackground="?background"
+            />
 
-    </ListView>
+        <Button
+            android:id="@+id/btnLectura"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:background="?colorPrimary"
+            android:gravity="center"
+            android:textColor="@color/md_black_1000"
+            android:popupBackground="?background"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/spinner_lectura"
+            android:text="CONSULTAR" />
+    </RelativeLayout>
 
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        tools:context="com.paquete.consultadb.MainActivity">
 
+        <TextView
+            android:id="@+id/textViewMes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_centerHorizontal="true"
+            android:text="[Mes]"/>
 
+        <ListView
+            android:id="@+id/listViewInformes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/textViewMes"/>
+
+    </RelativeLayout>
 </LinearLayout>

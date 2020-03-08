@@ -28,7 +28,7 @@
             android:id="@+id/salidas1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/predi"
+            android:src="@drawable/predi"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
