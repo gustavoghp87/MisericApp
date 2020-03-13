@@ -23,12 +23,12 @@
     <string name="text_button_login">ENTER NOW</string>
     <string name="dont_have_account">Do not have an account?</string>
     <string name="create_here">, create here</string>
-    <string name="menu_salidas">Preaching meeting points</string>
-    <string name="menu_sonido">Mechanic Assignments</string>
+    <string name="menu_salidas">Preaching points</string>
+    <string name="menu_sonido">Sound department</string>
     <string name="menu_grupos">Preaching Groups</string>
     <string name="interactivo">Interactive [coming soon]</string>
     <string name="homeiniciodesesion">LOGING</string>
-    <string name="advertencia">Your Password will not be visible for administrators. Consult source code in github.com/gustavoghp87/misericapp</string>
+    <string name="advertencia">Your Password will not be visible for administrators. Consult the source code in github.com/gustavoghp87/misericapp</string>
     <string name="button_logout">LOG OUT</string>
     <string name="opciones_cuenta">Account Settings</string>
     <string name="switch_dark">Dark Mode</string>
@@ -40,13 +40,20 @@
     <string name="hint_sendVideos">VIDEOS...</string>
     <string name="hint_sendRevisitas">REVISITS...</string>
     <string name="hint_sendEstudios">STUDIES...</string>
-    <string name="nota_report"> </string>
+<!--    <string name="nota_report"> </string>-->
     <string name="btnDarky">Dark Mode</string>
     <string name="btnLighty">Light Mode</string>
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
     <string name="mes_informe">MARCH 2020</string>
-    <string name="informesDB">Informes en la base de datos</string>
+    <string name="informesDB">Reports in Database</string>
+    <string name="titulo">Plaza de la Misericordia Official App</string>
+    <string name="anuncios_nocarga">[Loading news from database...]</string>
+    <string name="subir_imagenes">Compartir Fotos</string>
+    <string name="pizarra">BLACKBOARD PLAZA MISERICORDIA</string>
+    <string name="volver_pizarra">Come back to Blackboard</string>
+    <string name="menu_limpieza">Cleaning</string>
+    <string name="menu_cartas">Letters</string>
 
     <!--    <array name="mes">-->
 <!--        <item>February 2020</item>-->

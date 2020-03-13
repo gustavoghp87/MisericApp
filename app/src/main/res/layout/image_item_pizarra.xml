@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="?background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/text_view_name_pizarra_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[usuario]"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"/>
+            <TextView
+                android:id="@+id/text_view_name_pizarra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[título]"
+                android:textColor="@color/md_black_1000"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/text_view_name_pizarra_email"/>
+            </RelativeLayout>
+        <ImageView
+            android:id="@+id/image_view_pizarra"
+            android:layout_width="match_parent"
+
+            android:layout_height="400dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="X"
+                android:textSize="15sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"/>
+            <TextView
+                android:id="@+id/text_view_pizarra_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[fecha y hora]"
+                android:textColor="@color/md_black_1000"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

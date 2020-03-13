@@ -1,9 +1,7 @@
 package com.paquete.misericapp;
-import com.google.firebase.database.IgnoreExtraProperties;
 
-@IgnoreExtraProperties
 public class Informe {
-    private String name1;
+    private String a_email;
     private String a_horas;
     private String b_publicaciones;
     private String c_videos;
@@ -13,8 +11,8 @@ public class Informe {
     public Informe() {
     }
 
-    public Informe(String name1, String a_horas, String b_publicaciones, String c_videos, String d_revisitas, String e_estudios) {
-        this.name1 = name1;
+    public Informe(String a_email, String a_horas, String b_publicaciones, String c_videos, String d_revisitas, String e_estudios) {
+        this.a_email = a_email;
         this.a_horas = a_horas;
         this.b_publicaciones = b_publicaciones;
         this.c_videos = c_videos;
@@ -30,7 +28,7 @@ public class Informe {
         this.e_estudios = e_estudios;
     }
 
-    public String getName1() { return name1; }
+    public String getA_email() { return a_email; }
 
     public String getA_horas() { return a_horas; }
 

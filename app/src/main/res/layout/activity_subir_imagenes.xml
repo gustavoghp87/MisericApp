@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubirImagenes"
+    android:orientation="vertical"
+    android:background="?background">
+
+    <include layout="@layout/actionbar_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SubirImagenes"
+        android:padding="8dp"
+        android:background="?background">
+
+        <Button
+            android:id="@+id/btnElegirFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elegir\nfoto" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnElegirFoto">
+            <EditText
+                android:id="@+id/edit_text_elegir_foto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="[Escriba aquí un comentario para la foto...]"
+                android:textColorHint="@color/editTextColorGray"
+                android:textSize="18sp"
+                 />
+        </ScrollView>
+        <ImageView
+            android:id="@+id/image_view_subir_fotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnElegirFoto"
+            android:layout_above="@+id/progress_bar_subir_foto"
+            android:layout_marginTop="16dp" />
+        <ProgressBar
+            android:id="@+id/progress_bar_subir_foto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_above="@+id/btnSubirFoto"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="16dp" />
+<!--        <Button-->
+<!--            android:id="@+id/btnGirar"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:layout_marginStart="50dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:drawableBottom="@drawable/ic_grupos"-->
+<!--            />-->
+        <Button
+            android:id="@+id/btnSubirFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:text="SUBIR" />
+        <TextView
+            android:id="@+id/text_view_mostrar_pizarra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnSubirFoto"
+            android:layout_alignBottom="@+id/btnSubirFoto"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/btnSubirFoto"
+            android:text="@string/volver_pizarra"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+</LinearLayout>

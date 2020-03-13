@@ -23,10 +23,10 @@
     <string name="text_button_login">INGRESAR</string>
     <string name="dont_have_account">¿No tienes cuenta?</string>
     <string name="create_here">, crea una aquí</string>
-    <string name="menu_salidas">Salidas de Predicación</string>
+    <string name="menu_salidas">Predicación</string>
     <string name="interactivo">Interactivo [próximamente]</string>
     <string name="homeiniciodesesion">INICIO DE USUARIO</string>
-    <string name="version">MisericApp v. 4.0</string>
+    <string name="version">MisericApp v. 5.0</string>
     <string name="advertencia">A tener en cuenta: La contraseña elegida no será visible para los administradores. Puede consultar el código fuente en github.com/gustavoghp87/misericapp</string>
     <string name="button_logout">CERRAR SESIÓN</string>
     <string name="opciones_cuenta">Opciones de cuenta</string>
@@ -39,13 +39,20 @@
     <string name="hint_sendVideos">VIDEOS...</string>
     <string name="hint_sendRevisitas">REVISITAS</string>
     <string name="hint_sendEstudios">ESTUDIOS...</string>
-    <string name="nota_report">Nota: Si informa fracciones de hora, use el punto como separador, no la coma.</string>
+<!--    <string name="nota_report">Nota: Si informa fracciones de hora, use el punto como separador, no la coma.</string>-->
     <string name="btnDarky">Modo Oscuro</string>
-    <string name="btnLighty">Modo       Claro</string>
+    <string name="btnLighty">Modo Claro</string>
     <string name="btnEnglishy">ENGLISH</string>
     <string name="btnEspanioly">ESPAÑOL</string>
     <string name="mes_informe">MARZO 2020</string>
     <string name="informesDB">Informes en la base de datos</string>
+    <string name="titulo">App oficial de la congregación Plaza de la Misericordia</string>
+    <string name="anuncios_nocarga">[Cargando anuncios desde base de datos]</string>
+    <string name="subir_imagenes">Compartir Fotos</string>
+    <string name="pizarra">PIZARRA PLAZA MISERICORDIA</string>
+    <string name="volver_pizarra">Volver a la pizarra</string>
+    <string name="menu_limpieza">Limpieza</string>
+    <string name="menu_cartas">Cartas</string>
 
     <array name="mes">
         <item>[Elegir mes]</item>

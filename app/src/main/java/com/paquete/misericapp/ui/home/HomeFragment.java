@@ -4,33 +4,52 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.paquete.misericapp.R;
 
-public class HomeFragment extends Fragment
-{
+public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
+    private DatabaseReference databaseInformeLectura;
+    TextView textViewAnuncio1;
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final TextView textView = root.findViewById(R.id.text_home);
+//        final TextView textView = root.findViewById(R.id.text_home);
 
-        homeViewModel.getText().observe(this, new Observer<String>()
-        {
+        // anuncios desde base de datos
+        textViewAnuncio1 = root.findViewById(R.id.anuncio1);
+        databaseInformeLectura = FirebaseDatabase.getInstance().getReference("Tablero");
+        databaseInformeLectura.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChanged(@Nullable String s)
-            {
-                textView.setText(s);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                        String tableroString = dataSnapshot.child("anuncio1").getValue().toString();
+                        textViewAnuncio1.setText(tableroString);
+                    }
+                }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
+
+//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
         return root;
     }
 }

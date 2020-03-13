@@ -25,7 +25,7 @@ public class InformesList extends ArrayAdapter<Informe> {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.informe_list, null, true);
 
-        TextView mTextViewLecturaNombre = listViewItem.findViewById(R.id.textViewLecturaNombre);
+        TextView mTextViewLecturaEmail = listViewItem.findViewById(R.id.textViewLecturaEmail);
         TextView mTextViewLecturaHoras = listViewItem.findViewById(R.id.textViewLecturaHoras);
         TextView mTextViewLecturaPublicaciones = listViewItem.findViewById(R.id.textViewLecturaPublicaciones);
         TextView mTextViewLecturaVideos = listViewItem.findViewById(R.id.textViewLecturaVideos);
@@ -34,7 +34,7 @@ public class InformesList extends ArrayAdapter<Informe> {
 
         Informe informe = informes.get(position);
 
-        mTextViewLecturaNombre.setText(informe.getName1());
+        mTextViewLecturaEmail.setText("Email: " +informe.getA_email());
         mTextViewLecturaHoras.setText("Horas: " +informe.getA_horas());
         mTextViewLecturaPublicaciones.setText("Publicaciones: " +informe.getB_publicaciones());
         mTextViewLecturaVideos.setText("Videos: " +informe.getC_videos());

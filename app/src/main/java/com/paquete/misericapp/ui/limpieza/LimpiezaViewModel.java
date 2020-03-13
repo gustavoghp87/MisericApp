@@ -1,16 +1,16 @@
-package com.paquete.misericapp.ui.share;
+package com.paquete.misericapp.ui.limpieza;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class LimpiezaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public LimpiezaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("ASIGNACIONES DE LIMPIEZA DEL SALÓN");
     }
 
     public LiveData<String> getText() {

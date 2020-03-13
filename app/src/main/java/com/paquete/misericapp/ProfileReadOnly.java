@@ -32,7 +32,6 @@ public class ProfileReadOnly extends AppCompatActivity {
     Spinner spinnerLectura;
     Button btnLectura;
     String mesLectura;
-    String nombre1;
     TextView mTextViewMes;
 
     ListView listViewInformesX;
@@ -46,7 +45,7 @@ public class ProfileReadOnly extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         userUID = user.getUid();
-        if (!userUID.equals("Gs245UrpIucQ3zgtseiIp0bnxMz1") && !userUID.equals("1S8dUOm8gSYF2xHHqROMUFBvVi82")) {
+        if (!userUID.equals("pCvQto6aFBcDyo5bPooYziBsmy73") && !userUID.equals("1S8dUOm8gSYF2xHHqROMUFBvVi82")) {
             startActivity(new Intent(ProfileReadOnly.this, MainActivity.class));
         }
 

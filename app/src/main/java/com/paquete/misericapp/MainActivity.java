@@ -19,11 +19,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
-    FloatingActionButton fab;
-    FloatingActionButton fab2;
+    FloatingActionButton fab1;
+    FloatingActionButton fab22;
+    FloatingActionButton fab3;
     SharedPreferences sharedPreferences;
     FirebaseAuth mAuth;
     FirebaseUser user;
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         userUID = user.getUid();
-        fab2 = findViewById(R.id.fab2);
-        fab2.hide();
-        if (userUID.equals("Gs245UrpIucQ3zgtseiIp0bnxMz1") || userUID.equals("1S8dUOm8gSYF2xHHqROMUFBvVi82")) {
+
+        fab22 = findViewById(R.id.fab22);
+        fab22.hide();
+        if (userUID.equals("pCvQto6aFBcDyo5bPooYziBsmy73") || userUID.equals("AAAAAAAAAAAAAAAAAAAAA")) {
             Toast.makeText(this, "ADMINISTRADOR", Toast.LENGTH_LONG).show();
-            fab2.show();
-            fab2.setOnClickListener(new View.OnClickListener()
-            {
+            fab22.show();
+            fab22.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view)
                 {
@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity
             });
         }
 
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
+        fab1 = findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -75,20 +75,30 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        fab3 = findViewById(R.id.fab3);
+        fab3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                //Snackbar.make(view, "Nada por aquí por ahora...", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, Pizarra.class));
+            }
+        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_reuniones, R.id.nav_salidas, R.id.nav_sonido, R.id.nav_grupos,R.id.nav_share, R.id.nav_send).setDrawerLayout(drawer).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_cartas, R.id.nav_reuniones, R.id.nav_limpieza, R.id.nav_salidas, R.id.nav_sonido, R.id.nav_grupos).setDrawerLayout(drawer).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;

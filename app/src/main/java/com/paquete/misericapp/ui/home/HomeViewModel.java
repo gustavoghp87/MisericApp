@@ -5,14 +5,14 @@ import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel
 {
-    private MutableLiveData<String> mText;
-    public HomeViewModel()
-    {
-        mText = new MutableLiveData<>();
-        mText.setValue("TABLERO DE ANUNCIOS");
-    }
-    public LiveData<String> getText()
-    {
-        return mText;
-    }
+//    private MutableLiveData<String> mText;
+//    public HomeViewModel()
+//    {
+//        mText = new MutableLiveData<>();
+//        mText.setValue("TABLERO DE ANUNCIOS");
+//    }
+//    public LiveData<String> getText()
+//    {
+//        return mText;
+//    }
 }

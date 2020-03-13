@@ -38,24 +38,22 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 >
-
-                    <Button
-                        android:id="@+id/btnDark"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:text="@string/btnDarky"
-                        android:background="?colorPrimaryDark"
-                        android:layout_marginRight="10dp"
-                        />
-                    <Button
-                        android:id="@+id/btnLight"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:text="@string/btnLighty"
-                        android:layout_toRightOf="@+id/btnDark"
-                        android:layout_marginLeft="10dp"
-                        android:background="?colorPrimaryDark"
-                        />
+                <Button
+                    android:id="@+id/btnDark"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/btnDarky"
+                    android:background="?colorPrimaryDark"
+                    />
+<!--                    <Button-->
+<!--                        android:id="@+id/btnLight"-->
+<!--                        android:layout_width="150dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="@string/btnLighty"-->
+<!--                        android:layout_toRightOf="@+id/btnDark"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:background="?colorPrimaryDark"-->
+<!--                        />-->
             </LinearLayout>
 
             <LinearLayout
@@ -68,21 +66,20 @@
                 >
                 <Button
                     android:id="@+id/btnEnglish"
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:text="@string/btnEnglishy"
                     android:background="?colorPrimaryDark"
-                    android:layout_marginRight="10dp"
                     />
-                <Button
-                    android:id="@+id/btnEspaniol"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/btnEspanioly"
-                    android:layout_toRightOf="@+id/btnEnglish"
-                    android:background="?colorPrimaryDark"
-                    android:layout_marginLeft="10dp"
-                    />
+<!--                <Button-->
+<!--                    android:id="@+id/btnEspaniol"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:text="@string/btnEspanioly"-->
+<!--                    android:layout_toRightOf="@+id/btnEnglish"-->
+<!--                    android:background="?colorPrimaryDark"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    />-->
             </LinearLayout>
 
             <LinearLayout

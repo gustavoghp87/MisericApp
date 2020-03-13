@@ -20,7 +20,7 @@
         android:layout_marginTop="12dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:background="?colorPrimary"
+        android:background="?colorAccent"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/md_white_1000"
@@ -170,7 +170,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nota_report"
+                    android:text=""
                     android:layout_marginTop="15dp"
                     android:gravity="center"
                     android:textSize="17sp"

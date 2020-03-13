@@ -6,50 +6,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view"
     >
-
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:fillViewport="true" >-->
         <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_home"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_home"
                 />
             <item
+                android:id="@+id/nav_cartas"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/menu_cartas" />
+            <item
                 android:id="@+id/nav_reuniones"
-                android:icon="@drawable/ic_menu_gallery"
+                android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_reuniones" />
             <item
+                android:id="@+id/nav_limpieza"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/menu_limpieza" />
+            <item
                 android:id="@+id/nav_salidas"
-                android:icon="@drawable/ic_menu_gallery"
+                android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_salidas" />
             <item
                 android:id="@+id/nav_sonido"
-                android:icon="@drawable/ic_menu_gallery"
+                android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_sonido" />
             <item
                 android:id="@+id/nav_grupos"
-                android:icon="@drawable/ic_grupos"
+                android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_grupos" />
         </group>
 
-        <item android:title="@string/interactivo"
-            android:icon="@drawable/ic_menu_share"
-
-            >
-            <menu>
-                <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="@string/menu_share" />
-                <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_send"
-                    android:title="@string/menu_send" />
-            </menu>
-        </item>
+<!--        <item android:title="@string/interactivo"-->
+<!--            android:icon="@drawable/ic_menu_share" >-->
+<!--            <menu>-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_share"-->
+<!--                    android:icon="@drawable/ic_menu_camera"-->
+<!--                    android:title="@string/menu_share" />-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_send"-->
+<!--                    android:icon="@drawable/ic_menu_send"-->
+<!--                    android:title="@string/menu_send" />-->
+<!--            </menu>-->
+<!--        </item>-->
     <group />
-    <!--    </ScrollView>-->
 </menu>

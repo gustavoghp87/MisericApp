@@ -10,7 +10,7 @@ public class SonidoViewModel extends ViewModel
     public SonidoViewModel()
     {
         mText = new MutableLiveData<>();
-        mText.setValue("This is SONIDO fragment");
+        mText.setValue("ASIGNACIONES DEL DEPARTAMENTO DE SONIDO");
     }
 
     public LiveData<String> getText()

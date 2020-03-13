@@ -34,5 +34,4 @@
         android:src="@mipmap/ic_launcher"
         android:layout_marginTop="30dp"
         />
-
 </LinearLayout>

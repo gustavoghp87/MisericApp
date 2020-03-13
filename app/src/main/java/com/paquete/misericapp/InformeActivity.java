@@ -7,16 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import java.util.List;
 import java.util.Locale;
 
 public class InformeActivity extends AppCompatActivity
@@ -37,7 +36,9 @@ public class InformeActivity extends AppCompatActivity
     Spinner mesSpinner;
     DatabaseReference databaseInforme;
     DatabaseReference databaseInformeUser;
-    String name1;
+    String uid;
+    String email1;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -63,6 +64,7 @@ public class InformeActivity extends AppCompatActivity
                 break;
             case 2: changeLanguage("en");
         }
+
         setContentView(R.layout.activity_informe);
         showToolbar("ENVIAR INFORME DEL MES", true);
 
@@ -110,21 +112,27 @@ public class InformeActivity extends AppCompatActivity
         final String mesInforme = mesSpinner.getSelectedItem().toString();
         databaseInforme = FirebaseDatabase.getInstance().getReference("Informes");
         databaseInformeUser = FirebaseDatabase.getInstance().getReference("Users");
-        name1 = sharedPreferences.getString("userName", "error al cargar nombre desde memoria de dispositivo");
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            uid = user.getUid();
+            email1 = user.getEmail();
+        }
+//        name1 = sharedPreferences.getString("userName", "error al cargar nombre desde memoria de dispositivo");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(InformeActivity.this);
         builder.setTitle("Informe " +mesInforme);
-        builder.setMessage("Confirma tu informe por favor:\n\n Nombre: " +name1 +"\n Mes: " +mesInforme + "\n Horas: " + horas + "\n Publicaciones: " + publicaciones + "\n Videos: " + videos + "\n Revisitas: " + revisitas + "\n Estudios: " + estudios)
+        builder.setMessage("Confirma tu informe por favor:\n\n Correo: " +email1 +"\n Mes: " +mesInforme + "\n Horas: " + horas + "\n Publicaciones: " + publicaciones + "\n Videos: " + videos + "\n Revisitas: " + revisitas + "\n Estudios: " + estudios)
             .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 //                    String userEmail = user.getEmail();
 //                    String uid = databaseInforme.push().getKey();
 //                    String id = databaseInformeLectura.push().getKey();
-                    Informe informe = new Informe(name1, horas, publicaciones, videos, revisitas, estudios);
+                    Informe informe = new Informe(email1, horas, publicaciones, videos, revisitas, estudios);
                     Informe informeUser = new Informe(horas, publicaciones, videos, revisitas, estudios);
-                    databaseInforme.child(mesInforme).child(name1).setValue(informe);
-                    databaseInformeUser.child(name1).child(mesInforme).setValue(informeUser);
+                    databaseInforme.child(mesInforme).child(uid).setValue(informe);
+                    databaseInformeUser.child(uid).child(mesInforme).setValue(informeUser);
 
                     Toast.makeText(InformeActivity.this, "ENVIADO Horas: " + horas + ", publicaciones: " + publicaciones + ", videos: " + videos + ", revisitas: " + revisitas + ", estudios: " + estudios, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(InformeActivity.this, MainActivity.class));

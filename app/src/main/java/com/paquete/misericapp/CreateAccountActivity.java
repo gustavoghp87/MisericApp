@@ -136,7 +136,7 @@ public class CreateAccountActivity extends AppCompatActivity
         map.put("name", name1);
         map.put("email", email1);
         map.put("uid", id);
-        mDatabase.child("Users").child(name1).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>()
+        mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>()
         {
             @Override
             public void onComplete(@NonNull Task<Void> task2)
@@ -153,28 +153,25 @@ public class CreateAccountActivity extends AppCompatActivity
         });
     }
 
-    private void conclusionCreate()
-    {
-        sharedPreferences.edit().putString("userName", name1).apply();
+    private void conclusionCreate() {
+//        sharedPreferences.edit().putString("userName", email1).apply();
         sharedPreferences.edit().putInt("LOGIN", 2).apply();
         user = mAuth.getCurrentUser();
         user.sendEmailVerification();
         Toast.makeText(CreateAccountActivity.this, "RECIBIRÁ UN EMAIL PARA CONFIRMAR ESTA CUENTA\n(REVISAR SPAM)", Toast.LENGTH_SHORT).show();
 
-    startActivity(new Intent(CreateAccountActivity.this, LoginActivity.class));
+        startActivity(new Intent(CreateAccountActivity.this, OpenActivity.class));
         finish();
     }
 
-    public void showToolbar(String title, boolean upButton)
-    {
+    public void showToolbar(String title, boolean upButton) {
         Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
 
-    public void changeLanguage(String language2)
-    {
+    public void changeLanguage(String language2) {
         Locale locale = new Locale(language2);
         Locale.setDefault(locale);
         Configuration config = new Configuration();

@@ -34,8 +34,17 @@ public class LoginActivity extends AppCompatActivity {
 
         //login
         int loging = sharedPreferences.getInt("LOGIN", 1);
-        int verif = sharedPreferences.getInt("VERIF", 1);
-        if (loging == 2 && verif == 2) {enterApp();}
+        if (loging == 2) {
+            user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                boolean emailVerified = user.isEmailVerified();
+                if (emailVerified) {
+                    sharedPreferences.edit().putInt("LOGIN", 2).apply();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+                }
+            }
+        }
         // Si valor 1 y verif 1: nada, a crear cuenta
         // Si valor 1 y verif 2: a loguear
         // Si valor 2 y verif 1: esperar o crear otra cuenta
@@ -94,12 +103,11 @@ public class LoginActivity extends AppCompatActivity {
                     boolean emailVerified = user.isEmailVerified();
                     if (emailVerified) {
                         sharedPreferences.edit().putInt("LOGIN", 2).apply();
-                        sharedPreferences.edit().putInt("VERIF", 2).apply();
                         startActivity(new Intent(LoginActivity.this, LoginActivity.class));
                         finish();
                     }
                     else {
-                        Toast.makeText(LoginActivity.this, "El22 email no ha sido verificado\nRevise la casilla de correo no deseado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "El email no ha sido verificado\nRevise la casilla de correo no deseado", Toast.LENGTH_SHORT).show();
                         }
                 } else {
                     Toast.makeText(LoginActivity.this, "No se pudo iniciar sesión \n Revise los datos o cree una cuenta", Toast.LENGTH_SHORT).show();
@@ -124,16 +132,16 @@ public class LoginActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
+    private void enterApp() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void changeLanguage(String language2) {
         Locale locale = new Locale(language2);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-    }
-
-    private void enterApp() {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
     }
 }
